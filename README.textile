@@ -1,6 +1,6 @@
 h1. Simple Preview
 
-Instead of having to deal with "Live Look", this EE 2.0 accessory simply adds a Preview link to the page you see after submitting an entry. This way, you can utilize your already build single entry view for previews without much fuss.
+Instead of having to deal with "Live Look", this EE 2.0 accessory simply adds a Preview link to the "preview" page you see after submitting an entry. This way, you can utilize your already built single entry view for previews without much fuss.
 
 h2. Installation
 
