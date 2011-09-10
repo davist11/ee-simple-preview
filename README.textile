@@ -1,0 +1,32 @@
+h1. Simple Preview
+
+Instead of having to deal with "Live Look", this EE 2.0 accessory simply adds a Preview link to the page you see after submitting an entry. This way, you can utilize your already build single entry view for previews without much fuss.
+
+h2. Installation
+
+# Copy the simple_preview folder into your third_party directory.
+# Go to Add-Ons > Accessories and install Simple Preview.
+# Enter the url to your single entry template in the *Channel URL* field in Channel Preferences.
+# Allow closed statuses on your single entry template.
+
+h3. Example
+
+I have a blog channel that lives at /blog. The individual blog post URLs are /blog/{url_title}. In the preferences for the blog channel, I enter /blog/ into the Channel URL field. The URL for the preview link will be /blog/{url_title}/preview.
+
+Then, I need to make sure to allow closed status entries for the individual view, so my blog template looks like this:
+
+<pre>{if segment_2}
+	{!--This is the individual blog entry--}
+	
+	{exp:channel:entries
+		channel="blog"
+		limit="1"
+		status="open{if segment_3 == "preview"}|closed{/if}"
+	}
+	
+	{/exp:channel:entries}
+	
+{if:else}
+	{!--This is the blog listing page--}
+{/if}</pre>
+
